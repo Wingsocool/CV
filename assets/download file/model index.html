@@ -21,7 +21,7 @@
     <link rel="stylesheet"  type="text/css" href="assets/css/typo.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-    <link href="https://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
     <script>
         function loading() {
             document.getElementsByClassName('avatar')[0].style.display = 'block';
@@ -108,14 +108,17 @@
                     }
                 }
             </style>
-            <!-- 左侧固定开关 End-->
+            <!-- 左侧固定开关，记得及时删除这段代码 End-->
 
             <!-- 个人肖像 -->
             <section class="me">
                <!-- <section class="portrait">
                      <div class="loading">
                     <span></span>
-                  
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div> -->
                     <!-- 头像照片 -->
                    <!-- <img class="avatar" src="assets/images/card.jpg">
@@ -126,7 +129,24 @@
 
             </section>
 
-           
+            <!-- 基本信息 -->
+            <!-- <section class="profile info-unit">
+                <h2>
+                    <i class="fa fa-user" aria-hidden="true"></i>基本信息</h2>
+                <hr />
+                <ul>
+                    <li>
+                        <label>个人信息</label>
+                        <span>Wen YANG / Female / 26岁</span>
+                    </li>
+                    <li>
+                        <label>英语水平</label>
+                        <span> 英国硕士毕业</span>
+                    </li>
+
+                </ul>
+            </section>
+			-->
 
             <!-- 联系方式 -->
             <section class="contact info-unit">
@@ -134,14 +154,18 @@
                     <i class="fa fa-phone" aria-hidden="true"></i>Contact</h2>
                 <hr />
                 <ul><li>
-                        <label><i class="fa fa-envelope"></i></label>
+                        <!--<label><i class="fa fa-envelope"></i></label>-->
                         <a href="mailto:yangwen_uglasgow@yangwen.press" target="_blank">yangwen_uglasgow@yangwen.press</a>
                     </li>
-                                       
-                     <li>
+                    <!-- <li>
+                        <label><i class="fa fa-qq"></i></label>
+                        <a target="_blank">923091621</a>
+                    </li> -->
+                   
+                    <!-- <li>
                         <label><i class="fa fa-researchgate"></i></label>
                         <a href="https://www.researchgate.net/profile/Wen_Yang82" target="_blank"> ResearchGate Page</a>
-                    </li> 
+                    </li> -->
                     <!-- <li>
                         <label><i class="fa fa-github" aria-hidden="true"></i></label>
                         <a href="https://github.com" target="_blank">github.com</a>
@@ -150,16 +174,78 @@
             </section>
  
             <!-- 教育经历 -->
-         
+          <!--  <section class="edu info-unit">
+                    <h2>
+                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>教育经历</h2>
+                    <hr />
+                    <ul>
+                        <li>
+                            <h3>
+                                <p>西农 —— 本科</p>
+                                <p>专业：生技</p>
+                            </h3>
+                            <time>时间：<mark> 2012.9-2016.7</mark></time>
+                            <p>
+                                GPA：<mark>75.76/100</mark>
+                            </p>
+                            <p>专业排名：<mark>前 X%</mark>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+				-->
+    
+                <!-- 个人技能 -->
+               <!-- <section class="edu info-unit">
+                    <h2>
+                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>个人荣誉</h2>
+                    <hr />
+    
+    
+                    1、 2018 年<br />
+                    2、 2017 年 <br />
+    
+                </section>-->
+            <!-- 个人技能 -->
+           <!--  <section class="skill info-unit">
+                <h2>
+                    <i class="fa fa-code" aria-hidden="true"></i>技能点</h2>
+                <hr/>
+                <ul>
+                    <li>
+                        <label>Java</label>
+                        <progress value="80" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>JavaScript</label>
+                        <progress value="50" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>C#</label>
+                        <progress value="60" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>C</label>
+                        <progress value="70" max="100"></progress>
+                    </li>
+                    <li>
+                        <label>MySQL</label>
+                        <progress value="60" max="100"></progress>
+                    </li>
+                </ul>
+            </section> -->
         </section>
 
         <section class="main">
 <div class="details_header">
                 <ul>
-                    
+                    <!--
+					<li><a href="//www.yangwen.press"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+					
+                    <li><a href="/"><span class="glyphicon glyphicon-tasks " aria-hidden="true"></span>Blog</a></li>
+					-->
                     <li><a href="javascript:window.print();"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print CV</a></li>
-					<label><i class="fa fa-envelope"></i></label>
-                    <li><a href="mailto:yangwen_uglasgow@yangwen.press"><span class="fa fa-envelope" aria-hidden="true"></span>Email me</a></li>
+                    <li><a href="mailto:yangwen_uglasgow@yangwen.press"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Email me</a></li>
                 </ul>
             </div>
 		<!-- 教育经历 -->
@@ -440,7 +526,7 @@
                         <dd>
                             <span class="label label-default">Perl</span>
                             <span class="label label-default"> Database modification</span>
-                           
+                            <span class="label label-default"> Apache</span>
                             <span class="label label-default">PHP</span>
                             <span class="label label-default">MySQL</span>
                         </dd><br />
@@ -485,7 +571,12 @@
         <ul>
 			 <li>
 			<a href="/assets/download file/Wen_YANG_CV for PhD.pdf" download="Wen_YANG_CV for PhD.pdf">Download CV</a></li> 
-           
+            <!-- <li>
+                <a href="https://github.com/Wingsocool" target="_blank">Github</a>
+            </li>
+            <li>
+                <a href="https://blog.csdn.net/ target="_blank">Blog</a>
+            </li> -->
         </ul>
     </aside>   -->
 
