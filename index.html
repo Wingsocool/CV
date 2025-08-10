@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <!-- 添加 Font Awesome 5 的 CDN 链接 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 下面是原有的 -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -28,6 +31,36 @@
             document.getElementsByClassName('loading')[0].style.display = 'none';
         }
     </script>
+
+<!-- ================================================================== -->
+<!--          修复列表圆点问题的最终解决方案 (写入HTML头部)             -->
+<!-- ================================================================== -->
+<style>
+    /* 
+      此样式块的优先级非常高，因为它直接存在于 HTML 文档中。
+      我们将直接模仿之前成功的“内联样式测试”。
+    */
+
+    /* 目标 1: 为 WORK EXPERIENCE 的 [Details] 列表项添加圆点 */
+    .details-list > li {
+        list-style-type: disc !important;
+        margin-left: 40px !important; /* 直接使用测试成功的 margin-left */
+        margin-bottom: 5px !important;
+        line-height: 1.5;
+    }
+
+    /* 目标 2: 为 OTHER CERTIFICATIONS 列表项添加圆点 */
+    .cert > ul > li {
+        list-style-type: disc !important;
+        margin-left: 40px !important; /* 同样使用 margin-left */
+        margin-bottom: 5px !important;
+        line-height: 1.5;
+    }
+</style>
+<!-- ================================================================== -->
+
+</head>
+
 </head>
 
 <body>
@@ -152,33 +185,49 @@
                     <hr />
                     <ul>
                         <li>
-                         
+                     
 							<div class="edu_detail">
-							
-						<h3><span>University of Glasgow (U of G), <i>Glasgow, United Kingdom</i>
+							<h3>MSc in Biotechnology and Management</h3>	
+						<h4><li><i class="fas fa-university" aria-hidden="true"></i> <span>University of Glasgow, <i>Glasgow, United Kingdom</i>
 					</span>
-                            <time>09/2018 - 12/2019 </time></h3>
-                    <h4>MSc in Biotechnology and Management</h4>
-                    <p>[Main Courses] Marketing Management, Contemporary Issues in Human Resource Management, Managing Creativity and Innovation, Managing Strategic Change, Project Management, Technology transfer and Commercialisation of Bioscience Research, etc.</p> 
+                            <time>09/2018 - 12/2019 </time></h4>
+					<!-- <i class="fa fa-bars" aria-hidden="true"></i>
+					[Details] -->
+					<ul class="details-list">
+					<li>Interdisciplinary Programs in the College of Medical, Veterinary & Life Sciences</li>
+                    <li>Key areas: Marketing Management, Contemporary Issues in Human Resource Management, Managing Creativity and Innovation, Managing Strategic Change, Project Management, Technology transfer and Commercialisation of Bioscience Research, etc.</li> 
+					<li>Thesis: <i>Research on Problems of the Current Salary System and Optimization of Employee Incentive Mechanism in Public Hospitals in China</i></li>
+					</ul>
                 </div>
 				</li>
                <li>
 				<div class="edu_detail">
-                    <h3>
-					<span>Northwest A&F University (NWAFU) , <i>Yangling, China </i></span>
-					<time>09/2012 - 07/2016 </time></h3>
-                    <h4>BSc in Biotechnology (Honoured Graduate)</h4>
-                    <p>
-					The University is in Tier 1 in China and in the list of Chinese "Project 985" and "Project 211".</p>
+                    
+					<h3>BSc in Biotechnology (Honours Graduate)</h3>
+					<h4>
+					<i class="fas fa-university" aria-hidden="true"></i> <span>Northwest A&F University (NWAFU) , <i>Yangling, China </i></span>
+					<time>09/2012 - 07/2016 </time></h4>
+                   <!--  <i class="fa fa-bars" aria-hidden="true"></i>
+					[Details] -->
+					<ul class="details-list">
+					<li>
+					National Tier-1 university</li>
+					<li>Final-year project in bioinformatics, including transcriptome analysis using R and Python: <i>Study on The Screening of Livestock Fertility - Related Gene Based on Text Mining and the Establishment of Database Platform</i></li>
+					</ul>
                 </div>
 				</li>
 				<li>
 				 <div class="edu_detail">
-                    <h3>
-					<span>University of Helsinki, <i>Helsinki, Finland</i></span>
-					<time>8/2014</time></h3>
-                    <h4>Introduce to Bioethics</h4>
-                    <p>Summer School</p>
+                    
+					<h3>Introduce to Bioethics</h3>
+					<h4>
+					<i class="fas fa-university" aria-hidden="true"></i> <span>University of Helsinki, <i>Helsinki, Finland</i></span>
+					<time>8/2014</time></h4>
+					<!-- <i class="fa fa-bars" aria-hidden="true"></i>
+					[Details] -->
+                    <ul class="details-list">
+					<li>Summer School</li>
+					</ul>
                         </div>
             </div>
 			</li>
@@ -191,12 +240,12 @@
 
             <section class="project info-unit">
                 <h2>
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>RESEARCH EXPERIENCE(LEADER)</h2>
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>SELECTED RESEARCH EXPERIENCE</h2>
                 <hr />
                 <ul>
                     <li>
 					<h3>
-                            <span>1.	Research on Problems of the Current Salary System and Optimization of Employee Incentive Mechanism in Public Hospitals in China</span>
+                            <span>1. Research on Problems of the Current Salary System and Optimization of Employee Incentive Mechanism in Public Hospitals in China</span>
                             <time>01/2019 - 08/2019</time>
                         </h3>
                         <ul class="info-content">
@@ -208,11 +257,12 @@
                             </li>
                             <li>
                                 <i class="fa fa-bars" aria-hidden="true"></i>
-                                [Details]<br />
-                                <p>
-                                    By using both quantitative and qualitative analysis methods, combined with professional experience and knowledge, this study summarized the possible problems in the salary system of public hospitals in China and proposed an optimization plan for the employee incentive mechanism.<br />
-                                    This study provided theoretical support and suggestions for improving and optimizing employee incentive mechanisms in public hospitals with similar backgrounds.
-                                </p>
+								[Details]
+                              <ul class="details-list">
+								<li>
+                                    Conducted mixed-methods study on employee incentive mechanisms in Chinese public hospitals, revealing how internal organizational systems affect healthcare delivery capacity. Research highlighted how staff motivation and retention challenges connect to broader public-sector organisational performance and institutional incentive structures.</li>
+                                    <li>This study provided theoretical support and suggestions for improving and optimizing employee incentive mechanisms in public hospitals with similar backgrounds.
+                                </li>
                             </li>
                         </ul>
                     </li>
@@ -224,17 +274,18 @@
                         </h3>
                         <ul class="info-content">
                             <li><i class="fa fa-users" aria-hidden="true"></i>
-                                Leader of this independent experiment
+                                Sole Researcher of the independent experiment
                             </li>
                             <li><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                                 College of Life Science,<i> Northwest A&F University, Yangling.</i>
                             </li>
                             <li>
                                 <i class="fa fa-bars" aria-hidden="true"></i>
-               [Details]<br />                 
-                                <p>
-                                  The result was reported in my Bachelor thesis. The main programming languages were Perl and Python. R was also used to output statistical images.
-                                </p>
+               [Details]                 
+                                 <ul class="details-list">
+								<li>
+                                  Led an informatics-based study applying Perl, Python, and R to identify fertility-related genes in livestock; results presented as graduation thesis.
+                                </li>
                             </li>
                         </ul>
                     </li>
@@ -246,10 +297,18 @@
                         </h3>
                         <ul class="info-content">
                             <li><i class="fa fa-users" aria-hidden="true"></i>
-                                Leader of this independent experiment
+                                Project Leader of the independent experiment
                             </li>
                             <li><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                                 College of Life Science, <i>Northwest A&F University, Yangling.</i>
+                            </li>
+							 <li>
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+               [Details]                 
+ <ul class="details-list">                               
+							   <li>
+                                  Investigated enzymatic activity in drought-resistant wheat cultivars; led experimental design and analysis.
+                                </li>
                             </li>
                             
                         </ul>
@@ -262,7 +321,7 @@
                         </h3>
                         <ul class="info-content">
                             <li><i class="fa fa-users" aria-hidden="true"></i>
-                                Leader of this independent experiment
+                               <b> Principal Investigator (Student Leader), Nationally Funded Student Project </b>
                             </li>
                             <li><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                                 College of Life Science, <i>Northwest A&F University, Yangling.</i>
@@ -270,9 +329,12 @@
                             <li>
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                [Details]<br />                 
-                                <p>
-                                  This was a key project supervised by Northwest A&F University and the National Government. The project was appraised as Excellent project.
-                                </p>
+ <ul class="details-list">                              
+							  <li>
+                                   Successfully secured funding and led this nationally supported key project from conception to completion. 
+								   <li>My responsibilities included authoring the proposal, experimental design, and data analysis. </li>
+								   <li><b>The project was officially appraised as ‘Excellent’.</b>
+                                </li>
                             </li>
                         </ul>
                     </li>
@@ -280,9 +342,61 @@
                 </ul>
             </section>
 
-          
-
-            <!-- WORK EXPERIENCE  -->
+<!--
+                     
+ <!-- PUBLICATION 
+           <section class="pub info-unit">
+                <h2>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>PUBLICATION</h2>
+                <hr />
+				<h3> Bai, W., Yang, W., et al. (2017), GED: A manually curated comprehensive resource for epigenetic modification of gametogenesis.<i>Briefings in Bioinformatics (JCR Q1),  18(1), 98–104.</i>,</h3>
+				
+				<i class="fa fa-users" aria-hidden="true"></i>
+                                <b>Role: Second Author.</b> Contributed significantly to manuscript drafting and revision, database curation, and performed statistical analysis and data visualisation using R.
+                            
+							<li><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                PMID: 26831225 | DOI: <a href="https://doi.org/10.1093/bib/bbw007">10.1093/bib/bbw007</a>
+								</li>
+							<li>
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+							This project involved building a comprehensive bioinformatics platform for gametogenesis-related epigenetic modifications, supported by data infrastructure developed using Perl, MySQL, and PHP.
+                            </li>
+					 <!--		[以下不要]  -->
+							<!-- <li>
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                [Details]<br />
+                                <p>
+                                    &emsp;&emsp;<dt>Keywords</dt>
+                        <dd>
+                            <span class="label label-default">gametogenesis</span>
+                            <span class="label label-default"> epigenetic modification</span>
+                            <span class="label label-default"> database</span>
+                            <span class="label label-default">pathway</span>
+                            <span class="label label-default">network</span>
+                        </dd><br />
+                                    &emsp;&emsp;<dt>Skills</dt>
+                        <dd>
+                            <span class="label label-default">Perl</span>
+                            <span class="label label-default"> Database modification</span>
+                           
+                            <span class="label label-default">PHP</span>
+                            <span class="label label-default">MySQL</span>
+                        </dd><br />
+                                    &emsp;&emsp;<dt>Branches</dt>
+                        <dd>
+                            <span class="label label-default">Genomics</span>
+                            <span class="label label-default"> Proteomics</span>
+                            <span class="label label-default"> Bioinformatics</span>
+                            <span class="label label-default">Animal physiology</span>
+                            <span class="label label-default">network</span>
+                        </dd> </p>
+                            </li> 
+                
+            </section>
+ -->
+ 
+<!--
+            <!-- WORK EXPERIENCE  
             <section class="project info-unit">
                 <h2>
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>WORK EXPERIENCE</h2>
@@ -290,30 +404,27 @@
                 <ul>
                     <li>
                         <h3>
-                            <span>1. Sichuan Jiuzhou Yuntu Technology Co., Ltd</span>
-                            <time>01/2018 - now</time>
+                            <span>1. Founder & Director</span>
+                            <time>08/2018 - 06/2025</time>
                         </h3>
                         <ul class="info-content">
                             <li><i class="fa fa-users" aria-hidden="true"></i>
-                                HR Director and Founder
+                                Sichuan Jiuzhou Yuntu Technology Co., Ltd, <i>Chengdu, China</i>
 								
                             </li>
-<!--                             <li>
+                         <li>
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                 [Details]<br />
                                 <p>
-                       <ul>
-            <li> Supported and processed all HR Admin related paperwork throughout the full employment cycle, from dealing with recruitment matters, new starter documentation and internal changes.<br /></li>
-                                    <li>Maintained and acquired adequate support from relevant government.<br /></li>
-                                    <li>Maintained company's organization structure.<br /></li>
-									<li>Developed and Maintained competitive salary structure for the company.<br /></li>
-									<li>Led to establish the Performance appraisal system.<br /></li>
-									<li>Established the process to manage employee archives and employment contract conclusion, alteration, renewal and termination.<br /></li>
-									<li>Planed recruitment and ensure the execution.<br /></li>
-                                    <li>Implement employee enrolment, demission and transfer according to the process.</li>
-									</ul>  
+                       <ol>
+            <li> Founded and led a health-related biotech start-up; generated €100k in revenue within two years.<br /></li>
+                                    <li>Led collaborations with policy stakeholders on the commercialization of health technologies.<br /></li>
+                                    <li>Managed cross-functional teams handling tech transfer, health-sector consulting, and market development.<br /></li>
+									<li>Successfully navigated complex regulatory and cultural environments in cross-border partnerships across Asia and Eastern Europe.<br /></li>
+									<li>Collaborated with SMEs in the environmental and bioscience sectors, offering process digitisation and sustainability-readiness consulting.<br /></li>
+									</ol>  
                                 </p>
-                            </li> -->
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -332,11 +443,13 @@
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                 [Details]<br />
                                 <p>
-                                    <ul><li>Supported and processed all HR Admin related paperwork throughout the full employment cycle, from dealing with recruitment matters, new starter documentation and internal changes.<br /></li>
+                                    <ul>
+									<li>Supported and processed all HR Admin related paperwork throughout the full employment cycle, from dealing with recruitment matters, new starter documentation and internal changes.<br /></li>
                                     <li>Led to optimize current salary system and employee incentive mechanism.<br /></li>
                                     <li>Developed and Maintained competitive salary structure for the company.<br /></li>
 									<li>Maintained and acquired adequate support from relevant government.<br /></li>
-									<li>Supported other departments.</li></ul>
+									<li>Supported other departments.</li>
+									</ul>
                                 </p>
                             </li>
                         </ul>
@@ -390,77 +503,160 @@
                 </ul>
 				
             </section>
-            
-           <!-- PUBLICATION -->
-           <section class="pub info-unit">
-                <h2>
-                    <i class="fa fa-pencil" aria-hidden="true"></i>PUBLICATION</h2>
-                <hr />
-				<h3> GED: A manually curated comprehensive resource for epigenetic modification of gametogenesis.</h3>
-				
-				<li><i class="fa fa-users" aria-hidden="true"></i>
-                                Co-Author
-                            </li>
-							<li><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                                Briefings in Bioinformatics, Volume 18, Issue 1, January 2017, Pages 98-104.
-<a href="https://doi.org/10.1093/bib/bbw007">Full text</a>
-							<p>&emsp;&emsp;Published online on 05 February 2016 (OXFORD UNIV PRESS, ISSN: 1467-5463, Impact Factor: 9.617)
-							</p>
-                            </li>
-							<!-- <li>
-                                <i class="fa fa-bars" aria-hidden="true"></i>
-                                [Details]<br />
-                                <p>
-                                    &emsp;&emsp;<dt>Keywords</dt>
-                        <dd>
-                            <span class="label label-default">gametogenesis</span>
-                            <span class="label label-default"> epigenetic modification</span>
-                            <span class="label label-default"> database</span>
-                            <span class="label label-default">pathway</span>
-                            <span class="label label-default">network</span>
-                        </dd><br />
-                                    &emsp;&emsp;<dt>Skills</dt>
-                        <dd>
-                            <span class="label label-default">Perl</span>
-                            <span class="label label-default"> Database modification</span>
-                           
-                            <span class="label label-default">PHP</span>
-                            <span class="label label-default">MySQL</span>
-                        </dd><br />
-                                    &emsp;&emsp;<dt>Branches</dt>
-                        <dd>
-                            <span class="label label-default">Genomics</span>
-                            <span class="label label-default"> Proteomics</span>
-                            <span class="label label-default"> Bioinformatics</span>
-                            <span class="label label-default">Animal physiology</span>
-                            <span class="label label-default">network</span>
-                        </dd> </p>
-                            </li> -->
-                
-            </section>
+ 
+ -->
+ 
+ <!-- ======================================================================= -->
+<!--             以下是修正后的 HTML，请用这部分代码替换您原来的代码              -->
+<!-- ======================================================================= -->
+
+<!-- PUBLICATION -->
+<section class="pub info-unit">
+    <h2>
+        <i class="fa fa-pencil" aria-hidden="true"></i>PUBLICATION
+    </h2>
+    <hr />
+    <!-- 修正：将所有关于出版物的内容组织起来 -->
+    <div class="publication-item">
+        <h3> Bai, W., Yang, W., et al. (2017), GED: A manually curated comprehensive resource for epigenetic modification of gametogenesis.<i>Briefings in Bioinformatics (JCR Q1),  18(1), 98–104.</i></h3>
+        
+        <!-- 修正：使用 <p> 标签来组织描述性内容，而不是 <li> -->
+        <p>
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <b>Role: Second Author.</b> Contributed significantly to manuscript drafting and revision, database curation, and performed statistical analysis and data visualisation using R.
+        </p>
+        <p>
+            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+            PMID: 26831225 | DOI: <a href="https://doi.org/10.1093/bib/bbw007">10.1093/bib/bbw007</a>
+        </p>
+        <p>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            This project involved building a comprehensive bioinformatics platform for gametogenesis-related epigenetic modifications, supported by data infrastructure developed using Perl, MySQL, and PHP.
+        </p>
+    </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section class="project info-unit">
+    <h2>
+        <i class="fas fa-user-tie" aria-hidden="true"></i> WORK EXPERIENCE
+    </h2>
+    <hr />
+    <ul>
+        <li>
+            <h3>
+                <span>1. Founder & Director</span>
+                <time>01/2018 - 06/2025</time>
+            </h3>
+            <ul class="info-content">
+                <li><i class="fa fa-users" aria-hidden="true"></i>
+                    Sichuan Jiuzhou Yuntu Technology Co., Ltd, <i>Chengdu, China</i>
+                </li>
+             <li>
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    [Details]
+                    <!-- 修正：移除 <p> 标签，ul 不应嵌套在 p 中 -->
+                    <ul class="details-list"> 
+                        <li>Founded and led a health-related biotech start-up; generated €100k in revenue within two years.</li>
+                        <li>Led collaborations with policy stakeholders on the commercialization of health technologies.</li>
+                        <li>Managed cross-functional teams handling tech transfer, health-sector consulting, and market development.</li>
+                        <li>Successfully navigated complex regulatory and cultural environments in cross-border partnerships across Asia and Eastern Europe.</li>
+                        <li>Collaborated with SMEs in the environmental and bioscience sectors, offering process digitisation and sustainability-readiness consulting.</li>
+                    </ul>  
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <ul>
+        <li>
+            <h3>
+                <span>2. HR Manager / HR Assistant</span>
+                <time>08/2016 - 07/2018</time>
+            </h3>
+            <ul class="info-content">
+                <li><i class="fa fa-users" aria-hidden="true"></i>
+                    Chengdu Kunda Heavy Duty Truck Parts Co., Ltd. (now Sichuan Yixin Hengtong Trading Co., Ltd.)
+                </li>
+                <li>
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    [Details]
+                    <!-- 修正：移除 <p> 标签 -->
+                    <ul class="details-list">
+                        <li>Supported and processed all HR Admin related paperwork throughout the full employment cycle, from dealing with recruitment matters, new starter documentation and internal changes.</li>
+                        <li>Developed HR workflows and training programmes in an industrial enterprise.</li>
+                        <li>Supported internal data collection and performance system setup.</li>
+                        <li>Maintained and acquired adequate support from relevant government.</li>
+                        <li>Supported other departments.</li>
+					
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    
+    <ul>
+        <li>
+            <h3>
+                <span>3. Volunteer</span>
+                <time>10/2013</time>
+            </h3>
+            <ul class="info-content">
+                <li><i class="fa fa-users" aria-hidden="true"></i>
+                    Solidarites Jeunesses Vietnam
+                </li>
+                <li>
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    [Details]<br />
+                    <!-- 这里如果只有一行内容，可以使用 <p>，但如果它代表一个列表项，最好也用 <ul> 包含 -->
+                    <ul class="details-list">
+					<li>Supported care for disadvantaged children in a youth centre.</li>
+					</ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
 			
-			<!-- 专业能力 -->
-            <section class="cert info-unit">
-                <h2>
-                    <i class="fa fa-pencil" aria-hidden="true"></i>OTHER PROFESSIONAL CERTIFICATIONS</h2>
-                <hr />
-				<p> <li>China Accreditation Test for Translators and Interpreters (CATTI) International - Chinese-English interpreter; </li>
-                </p>
-                <p> <li>Piano (Top level as amateur player); </li>
-                </p>
-                <p><li>
-                    Bridge (Cards Game. Player);
-                </li></p>
-                <p>
-                    <li>Scottish Football Association Coach Licence Level 1 (equivalent to UEFA D Licence).</li>
-                </p>
-				<p>
-                    <li>Red Cross First Aider;</li>
-                </p>
-				<p>
-                    <li>Amateur Radio Operation Licence.</li>
-                </p>
-            </section>
+			
+<!-- OTHER PROFESSIONAL CERTIFICATIONS -->
+<section class="cert info-unit">
+    <h2>
+        <i class="fas fa-award" aria-hidden="true"></i> OTHER PROFESSIONAL CERTIFICATIONS
+    </h2>
+    <hr />
+    <!-- 修正：将所有 <li> 元素包裹在一个 <ul> 标签内 -->
+    <h3>
+                <i class="fas fa-comment-dots" aria-hidden="true"></i> <span>Languages</span>
+         
+            </h3>
+			<ul>
+			<li>Mandarin (Native).</li>
+			<li>English (Advanced / C1, proficiency demonstrated by UK MSc)	</li>
+			</ul>
+			    <h3>
+                <i class="fas fa-laptop" aria-hidden="true"></i> <span>Technical Skills</span>
+         
+            </h3>
+				<ul>
+				 <li>Quantitative analysis: R (gene expression analysis, statistical modelling), Python (bioinformatics, data mining) </li>
+        <li>Healthcare data: Experience with real-world healthcare datasets, survey design, and outcome mapping </li>
+        <li>Database development: MySQL, data visualisation, statistical inference</li>
+		</ul>
+					    <h3>
+               <i class="fas fa-certificate" aria-hidden="true"></i>  <span>Professional Certificates</span>
+         
+            </h3>
+			<ul>
+        <li>China Accreditation Test for Translators and Interpreters (CATTI) Certified Chinese-English Translator and interpreter; </li>
+        <li>Certificate of Developing Skills for Women Leadership in Climate Action – UNITAR </li>
+        <li>Bridge (Cards Game. Player);</li>
+        <li>Certificate of Introduction to Digital Journalism - REUTERS</li>
+
+    </ul>
+	
+</section>
 
 
         </section>
@@ -468,7 +664,7 @@
 
 
     <footer class="footer">
-        <p> <b>©2022 YANG Wen</b> </p>
+        <p> <b>©2025 YANG Wen</b> </p>
     </footer>
 
     <!-- 侧栏 -->
